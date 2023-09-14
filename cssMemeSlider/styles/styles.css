@@ -15,7 +15,7 @@ body {
 /* ==== SLIDER ==== */
 
 .slider {
-  background: url('../assets/images/bg.jpg');
+  background: url("../assets/images/bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -70,7 +70,7 @@ body {
   max-width: 40rem;
 }
 .slider__text {
-  font-family: 'Permanent Marker', sans-serif;
+  font-family: "Permanent Marker", sans-serif;
   font-size: 18px;
   display: flex;
   align-items: center;
@@ -122,7 +122,7 @@ body {
   border-right: 0.15rem solid #282623;
   border-bottom: 0.15rem solid #282623;
 }
-.slider__input ~ .slider__content .slider__pagination .slider__dot label {
+.slider__input ~ .slider__content .slider__pagination .slider__dot span {
   background: #282623;
   border: 0.15rem solid #282623;
   border-radius: 100%;
@@ -130,9 +130,9 @@ body {
   width: 1.2rem;
   height: 1.2rem;
   cursor: pointer;
-  transition: all 0.3s linear;
+  transition: all 0.3s ease-in;
 }
-.slider__input ~ .slider__content .slider__pagination .slider__dot:hover label {
+.slider__input ~ .slider__content .slider__pagination .slider__dot:hover span {
   background-color: #f9dc24;
   border: 0.15rem solid #f9dc24;
 }
@@ -140,22 +140,22 @@ body {
   ~ .slider__content
   .slider__pagination
   .slider__dot:nth-child(1)
-  label,
+  span,
 .slider__input#input-2:checked
   ~ .slider__content
   .slider__pagination
   .slider__dot:nth-child(2)
-  label,
+  span,
 .slider__input#input-3:checked
   ~ .slider__content
   .slider__pagination
   .slider__dot:nth-child(3)
-  label,
+  span,
 .slider__input#input-4:checked
   ~ .slider__content
   .slider__pagination
   .slider__dot:nth-child(4)
-  label {
+  span {
   background-color: transparent;
   border: 0.15rem solid #282623;
 }
@@ -163,22 +163,22 @@ body {
   ~ .slider__content
   .slider__pagination
   .slider__dot:nth-child(1):hover
-  label,
+  span,
 .slider__input#input-2:checked
   ~ .slider__content
   .slider__pagination
   .slider__dot:nth-child(2):hover
-  label,
+  span,
 .slider__input#input-3:checked
   ~ .slider__content
   .slider__pagination
   .slider__dot:nth-child(3):hover
-  label,
+  span,
 .slider__input#input-4:checked
   ~ .slider__content
   .slider__pagination
   .slider__dot:nth-child(4):hover
-  label {
+  span {
   background-color: transparent;
   border: 0.15rem solid #f9dc24;
 }
@@ -284,4 +284,3 @@ body {
   .slider__text:nth-child(4) {
   transform: translateX(-300%);
 }
-
