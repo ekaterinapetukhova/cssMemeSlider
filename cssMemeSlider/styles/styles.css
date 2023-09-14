@@ -15,7 +15,10 @@ body {
 /* ==== SLIDER ==== */
 
 .slider {
-  background: #efefef;
+  background: url('../assets/images/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,11 +31,11 @@ body {
 .slider__content {
   display: grid;
   grid-template-areas: "slide slide" "text pagination";
-  row-gap: 1.5rem;
+  row-gap: 2rem;
   padding: 0 2rem;
 }
 .slider__slides {
-  box-shadow: 0 0 0 2px #080706, 8px 8px 0 0 #080706;
+  box-shadow: 0 0 0 0.5rem #282623, 1rem 1rem 0 0 #282623;
   grid-area: slide;
   display: flex;
   overflow: hidden;
@@ -58,18 +61,21 @@ body {
   height: 100%;
 }
 .slider__text-block {
+  background: #fff;
+  border: 0.15rem solid #282623;
+  color: #282623;
   grid-area: text;
   display: flex;
   overflow: hidden;
   max-width: 40rem;
 }
 .slider__text {
-  color: #080706;
-  font-family: 'DM Serif Display', sans-serif;
+  font-family: 'Permanent Marker', sans-serif;
   font-size: 18px;
   display: flex;
   align-items: center;
   flex: 1 0 100%;
+  padding-left: 5px;
   transition: transform 0.8s linear;
 }
 .slider__text:nth-child(2) {
@@ -90,6 +96,7 @@ body {
   justify-content: flex-end;
 }
 .slider__dot {
+  background-color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -97,12 +104,27 @@ body {
   height: 2rem;
   cursor: pointer;
 }
+.slider__dot:nth-child(1) {
+  border-top: 0.15rem solid #282623;
+  border-left: 0.15rem solid #282623;
+  border-bottom: 0.15rem solid #282623;
+}
+.slider__dot:nth-child(2) {
+  border-top: 0.15rem solid #282623;
+  border-bottom: 0.15rem solid #282623;
+}
+.slider__dot:nth-child(3) {
+  border-top: 0.15rem solid #282623;
+  border-bottom: 0.15rem solid #282623;
+}
+.slider__dot:nth-child(4) {
+  border-top: 0.15rem solid #282623;
+  border-right: 0.15rem solid #282623;
+  border-bottom: 0.15rem solid #282623;
+}
 .slider__input ~ .slider__content .slider__pagination .slider__dot label {
-  background: #080706;
-  border: 0.15rem solid #080706;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
-    0 4px 4px rgba(0, 0, 0, 0.11), 0 6px 8px rgba(0, 0, 0, 0.11),
-    0 8px 16px rgba(0, 0, 0, 0.11);
+  background: #282623;
+  border: 0.15rem solid #282623;
   border-radius: 100%;
   display: block;
   width: 1.2rem;
@@ -111,8 +133,8 @@ body {
   transition: all 0.3s linear;
 }
 .slider__input ~ .slider__content .slider__pagination .slider__dot:hover label {
-  background-color: #f62a00;
-  border: 0.15rem solid #f62a00;
+  background-color: #f9dc24;
+  border: 0.15rem solid #f9dc24;
 }
 .slider__input#input-1:checked
   ~ .slider__content
@@ -135,7 +157,7 @@ body {
   .slider__dot:nth-child(4)
   label {
   background-color: transparent;
-  border: 0.15rem solid #080706;
+  border: 0.15rem solid #282623;
 }
 .slider__input#input-1:checked
   ~ .slider__content
@@ -158,7 +180,7 @@ body {
   .slider__dot:nth-child(4):hover
   label {
   background-color: transparent;
-  border: 0.15rem solid #f62a00;
+  border: 0.15rem solid #f9dc24;
 }
 
 /* === SLIDES ANIMATION === */
