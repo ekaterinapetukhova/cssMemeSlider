@@ -1,12 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../cssMemeSlider/styles/styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:regular&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../cssMemeSlider/styles/styles.css" />
     <title>Meme Slider</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <div class="slider">
+      <input
+        class="slider__input"
+        id="input-1"
+        type="radio"
+        name="radio"
+        checked
+      />
+      <input class="slider__input" id="input-2" type="radio" name="radio" />
+      <input class="slider__input" id="input-3" type="radio" name="radio" />
+      <input class="slider__input" id="input-4" type="radio" name="radio" />
+      <div class="slider__content">
+        <div class="slider__slides">
+          <div class="slider__slide">
+            <img src="assets/images/slide-1.jpg" alt="Mem 1" />
+          </div>
+          <div class="slider__slide">
+            <img src="assets/images/slide-2.jpg" alt="Mem 2" />
+          </div>
+          <div class="slider__slide">
+            <img src="assets/images/slide-3.jpg" alt="Mem 3" />
+          </div>
+          <div class="slider__slide">
+            <img src="assets/images/slide-4.jpg" alt="Mem 4" />
+          </div>
+        </div>
+        <div class="slider__text-block">
+          <p class="slider__text">
+            Does only text on such a background understand you too?
+          </p>
+          <p class="slider__text">
+            It will be better for you to be without me. That's why I'm staing.
+          </p>
+          <p class="slider__text">Why are you warching? Do you like me?</p>
+          <p class="slider__text">ORDER.</p>
+        </div>
+        <div class="slider__pagination">
+          <div class="slider__dot">
+            <label for="input-1">1</label>
+          </div>
+          <div class="slider__dot">
+            <label for="input-2">2</label>
+          </div>
+          <div class="slider__dot">
+            <label for="input-3">3</label>
+          </div>
+          <div class="slider__dot">
+            <label for="input-4">4</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

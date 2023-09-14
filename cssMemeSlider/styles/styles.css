@@ -1,0 +1,264 @@
+/* ==== GLOBAL ==== */
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+}
+
+/* ==== SLIDER ==== */
+
+.slider {
+  background: #5d535e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 100%;
+}
+.slider__input {
+  display: none;
+}
+.slider__content {
+  display: grid;
+  grid-template-areas: "slide slide" "text pagination";
+  row-gap: 1.5rem;
+  padding: 0 15px;
+}
+.slider__slides {
+  grid-area: slide;
+  display: flex;
+  overflow: hidden;
+  max-width: 65rem;
+}
+.slider__slide {
+  flex: 1 0 100%;
+  max-height: 50rem;
+  transition: transform 0.8s linear;
+}
+.slider__slide:nth-child(2) {
+  transform: translateX(0);
+}
+.slider__slide:nth-child(3) {
+  transform: translateX(-100%);
+}
+.slider__slide:nth-child(4) {
+  transform: translateX(-200%);
+}
+.slider__slide img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.slider__text-block {
+  grid-area: text;
+  display: flex;
+  overflow: hidden;
+  max-width: 500px;
+}
+.slider__text {
+  font-family: Poppins, sans-serif;
+  display: flex;
+  align-items: center;
+  flex: 1 0 100%;
+  transition: transform 0.8s linear;
+}
+.slider__text:nth-child(2) {
+  transform: translateX(0);
+}
+.slider__text:nth-child(3) {
+  transform: translateX(-100%);
+}
+.slider__text:nth-child(4) {
+  transform: translateX(-200%);
+}
+
+/* === PAGINATION === */
+
+.slider__pagination {
+  grid-area: pagination;
+  display: flex;
+  justify-content: flex-end;
+}
+.slider__dot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
+.slider__input ~ .slider__content .slider__pagination .slider__dot label {
+  background-color: red;
+  border: 0.1rem solid black;
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: center;
+  display: block;
+  width: 1.2rem;
+  height: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.slider__dot:hover label {
+  background-color: black;
+  border: 0.1rem solid red;
+  color: white;
+}
+.slider__input#input-1:checked
+  ~ .slider__content
+  .slider__pagination
+  .slider__dot:nth-child(1)
+  label,
+.slider__input#input-2:checked
+  ~ .slider__content
+  .slider__pagination
+  .slider__dot:nth-child(2)
+  label,
+.slider__input#input-3:checked
+  ~ .slider__content
+  .slider__pagination
+  .slider__dot:nth-child(3)
+  label,
+.slider__input#input-4:checked
+  ~ .slider__content
+  .slider__pagination
+  .slider__dot:nth-child(4)
+  label {
+  background-color: black;
+  border: 0.1rem solid red;
+  color: red;
+}
+.slider__input#input-1:checked
+  ~ .slider__content
+  .slider__pagination
+  .slider__dot:nth-child(1):hover
+  label,
+.slider__input#input-2:checked
+  ~ .slider__content
+  .slider__pagination
+  .slider__dot:nth-child(2):hover
+  label,
+.slider__input#input-3:checked
+  ~ .slider__content
+  .slider__pagination
+  .slider__dot:nth-child(3):hover
+  label,
+.slider__input#input-4:checked
+  ~ .slider__content
+  .slider__pagination
+  .slider__dot:nth-child(4):hover
+  label {
+  background-color: black;
+  border: 0.1rem solid red;
+  color: white;
+}
+
+/* === SLIDES ANIMATION === */
+
+/* SLIDE 2 */
+.slider__input#input-2:checked
+  ~ .slider__content
+  .slider__slides
+  .slider__slide:nth-child(1) {
+  transform: translateX(-100%);
+}
+.slider__input#input-2:checked
+  ~ .slider__content
+  .slider__slides
+  .slider__slide:nth-child(2) {
+  transform: translateX(-100%);
+}
+
+/* SLIDE 3 */
+.slider__input#input-3:checked
+  ~ .slider__content
+  .slider__slides
+  .slider__slide:nth-child(2) {
+  transform: translateX(-200%);
+}
+.slider__input#input-3:checked
+  ~ .slider__content
+  .slider__slides
+  .slider__slide:nth-child(3) {
+  transform: translateX(-200%);
+}
+
+/* SLIDE 4 */
+.slider__input#input-4:checked
+  ~ .slider__content
+  .slider__slides
+  .slider__slide:nth-child(3) {
+  transform: translateX(-300%);
+}
+.slider__input#input-4:checked
+  ~ .slider__content
+  .slider__slides
+  .slider__slide:nth-child(4) {
+  transform: translateX(-300%);
+}
+
+/* === TEXT ANIMATION === */
+
+/* TEXT 2 */
+.slider__input#input-2:checked
+  ~ .slider__content
+  .slider__text-block
+  .slider__text:nth-child(1) {
+  transform: translateX(-100%);
+}
+.slider__input#input-2:checked
+  ~ .slider__content
+  .slider__text-block
+  .slider__text:nth-child(2) {
+  transform: translateX(-100%);
+}
+
+/* TEXT 3 */
+
+.slider__input#input-3:checked
+  ~ .slider__content
+  .slider__text-block
+  .slider__text:nth-child(2),
+.slider__input#input-3:checked
+  ~ .slider__content
+  .slider__text-block
+  .slider__text:nth-child(1) {
+  transform: translateX(-200%);
+}
+.slider__input#input-3:checked
+  ~ .slider__content
+  .slider__text-block
+  .slider__text:nth-child(3) {
+  transform: translateX(-200%);
+}
+
+/* TEXT 4 */
+
+.slider__input#input-4:checked
+  ~ .slider__content
+  .slider__text-block
+  .slider__text:nth-child(3),
+.slider__input#input-4:checked
+  ~ .slider__content
+  .slider__text-block
+  .slider__text:nth-child(2),
+.slider__input#input-4:checked
+  ~ .slider__content
+  .slider__text-block
+  .slider__text:nth-child(1) {
+  transform: translateX(-300%);
+}
+.slider__input#input-4:checked
+  ~ .slider__content
+  .slider__text-block
+  .slider__text:nth-child(4) {
+  transform: translateX(-300%);
+}
