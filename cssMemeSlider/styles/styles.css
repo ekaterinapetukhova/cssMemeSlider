@@ -15,7 +15,7 @@ body {
 /* ==== SLIDER ==== */
 
 .slider {
-  background: #5d535e;
+  background: #efefef;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,9 +29,10 @@ body {
   display: grid;
   grid-template-areas: "slide slide" "text pagination";
   row-gap: 1.5rem;
-  padding: 0 15px;
+  padding: 0 2rem;
 }
 .slider__slides {
+  box-shadow: 0 0 0 2px #080706, 8px 8px 0 0 #080706;
   grid-area: slide;
   display: flex;
   overflow: hidden;
@@ -60,10 +61,12 @@ body {
   grid-area: text;
   display: flex;
   overflow: hidden;
-  max-width: 500px;
+  max-width: 40rem;
 }
 .slider__text {
-  font-family: Poppins, sans-serif;
+  color: #080706;
+  font-family: 'DM Serif Display', sans-serif;
+  font-size: 18px;
   display: flex;
   align-items: center;
   flex: 1 0 100%;
@@ -95,22 +98,21 @@ body {
   cursor: pointer;
 }
 .slider__input ~ .slider__content .slider__pagination .slider__dot label {
-  background-color: red;
-  border: 0.1rem solid black;
-  font-family: Poppins, sans-serif;
-  font-size: 14px;
-  line-height: 1.4;
-  text-align: center;
+  background: #080706;
+  border: 0.15rem solid #080706;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
+    0 4px 4px rgba(0, 0, 0, 0.11), 0 6px 8px rgba(0, 0, 0, 0.11),
+    0 8px 16px rgba(0, 0, 0, 0.11);
+  border-radius: 100%;
   display: block;
   width: 1.2rem;
   height: 1.2rem;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s linear;
 }
-.slider__dot:hover label {
-  background-color: black;
-  border: 0.1rem solid red;
-  color: white;
+.slider__input ~ .slider__content .slider__pagination .slider__dot:hover label {
+  background-color: #f62a00;
+  border: 0.15rem solid #f62a00;
 }
 .slider__input#input-1:checked
   ~ .slider__content
@@ -132,9 +134,8 @@ body {
   .slider__pagination
   .slider__dot:nth-child(4)
   label {
-  background-color: black;
-  border: 0.1rem solid red;
-  color: red;
+  background-color: transparent;
+  border: 0.15rem solid #080706;
 }
 .slider__input#input-1:checked
   ~ .slider__content
@@ -156,9 +157,8 @@ body {
   .slider__pagination
   .slider__dot:nth-child(4):hover
   label {
-  background-color: black;
-  border: 0.1rem solid red;
-  color: white;
+  background-color: transparent;
+  border: 0.15rem solid #f62a00;
 }
 
 /* === SLIDES ANIMATION === */
@@ -262,3 +262,4 @@ body {
   .slider__text:nth-child(4) {
   transform: translateX(-300%);
 }
+
