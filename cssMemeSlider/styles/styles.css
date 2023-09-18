@@ -39,11 +39,11 @@ body {
   grid-area: slide;
   display: flex;
   overflow: hidden;
-  max-width: 65rem;
+  max-width: 55rem;
 }
 .slider__slide {
   flex: 1 0 100%;
-  max-height: 50rem;
+  max-height: 45rem;
   transition: transform 0.8s linear;
 }
 .slider__slide:nth-child(2) {
